@@ -12,6 +12,7 @@ public class TestMoodAnalyser {
         assertEquals("HAPPY", MoodAnalyser.analyseMood("I am in Any Mood"));
         assertEquals("HAPPY", MoodAnalyser.analyseMood("I am in Mood"));
         assertEquals("SAD",MoodAnalyser.analyseMood(mood.getMsg()));
+        assertEquals("HAPPY", MoodAnalyser.analyseMood(""));
         assertEquals("HAPPY",MoodAnalyser.analyseMood(mTwo.getMsg()));
     }
 

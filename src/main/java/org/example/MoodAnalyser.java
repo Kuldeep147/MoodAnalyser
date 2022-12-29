@@ -5,15 +5,27 @@ public class MoodAnalyser {
         System.out.println("Hello world!");
     }
     String msg ;
-    public static String analyseMood(String str){
-          try {
-              if (str.equals("I am in Sad Mood")) {
-                  return "SAD";
-              } else return "HAPPY";
-          }catch (NullPointerException e){
-              return "HAPPY";
-          }
+    public static String analyseMood(String str) {
+        try {
+
+
+            if (str.equals("I am in Sad Mood")) {
+                return "SAD";
+            } else if (str.equals("")) {
+                try {
+                    throw new MoodAnalysisException("Empty mood");
+                } catch (MoodAnalysisException e) {
+                    throw new RuntimeException(e);
+                }
+            } else return "HAPPY";
+        }catch (NullPointerException ed){
+            try {
+                throw new MoodAnalysisException("Invalid Mood");
+            } catch (MoodAnalysisException ex) {
+                throw new RuntimeException(ex);
+            }
         }
+    }
 
 
     public MoodAnalyser(String msg) {
