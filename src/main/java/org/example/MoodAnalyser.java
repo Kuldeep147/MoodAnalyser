@@ -6,10 +6,15 @@ public class MoodAnalyser {
     }
     String msg ;
     public static String analyseMood(String str){
-        if(str.equals("I am in Sad Mood")){
-            return "SAD";
-        } else return "HAPPY";
-    }
+          try {
+              if (str.equals("I am in Sad Mood")) {
+                  return "SAD";
+              } else return "HAPPY";
+          }catch (NullPointerException e){
+              return "HAPPY";
+          }
+        }
+
 
     public MoodAnalyser(String msg) {
         this.msg = msg;
